@@ -1,9 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Props from './04-props/Props'
-
-import YourComponent from './04-props/YourComponent'
+import LifeCycle from './10-lifecycle/LifeCycle'
 
 // function Message() {
 //   this.name = 'zhaoqian'
@@ -12,8 +10,8 @@ import YourComponent from './04-props/YourComponent'
 // const message = new Message()
 
 ReactDOM.render(
-  <Props title={<YourComponent />}>
+  <LifeCycle>
     <div>item</div>
-  </Props>,
+  </LifeCycle>,
   document.querySelector('#root')
 )
