@@ -8,28 +8,38 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment() {
+      dispatch(() => {
+        setTimeout(() => {
+          dispatch({
+            type: 'increment',
+            payload: 2
+          })
+        }, 2000)
+      })
+    },
+    decrement() {
+      dispatch({
+        type: 'decrement',
+        payload: 2
+      })
+    }
+  }
+}
+
 export class Redux extends Component {
   render() {
+    let { increment, decrement, count } = this.props
     return (
       <div>
-        <button onClick={this.handleIncClick}>+</button>
-        {this.props.count}
-        <button onClick={this.handleDecClick}>-</button>
+        <button onClick={increment}>+</button>
+        {count}
+        <button onClick={decrement}>-</button>
       </div>
     )
   }
-
-  // handleIncClick() {
-  //   store.dispatch({
-  //     type: 'increment'
-  //   })
-  // }
-
-  // handleDecClick() {
-  //   store.dispatch({
-  //     type: 'decrement'
-  //   })
-  // }
 }
 
-export default connect(mapStateToProps)(Redux)
+export default connect(mapStateToProps, mapDispatchToProps)(Redux)
