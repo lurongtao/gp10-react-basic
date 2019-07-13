@@ -9,16 +9,10 @@ class LiftSateUpA extends Component {
   }
 
   render() {
-    let { onMessage } = this.props
     return (
-      <button onClick={e => onMessage(this.state.message)}>send</button>
+      <button>click</button>
     )
   }
-    
-  // handleClick() {
-  //   let { onMessage } = this.props
-  //   onMessage(this.state.message)
-  // }
 }
 
 export default LiftSateUpA

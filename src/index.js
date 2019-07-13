@@ -1,17 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 
-import LifeCycle from './10-lifecycle/LifeCycle'
+import Redux from './13-Redux/Redux'
 
-// function Message() {
-//   this.name = 'zhaoqian'
-// }
-
-// const message = new Message()
+import store from './13-Redux/store/'
 
 ReactDOM.render(
-  <LifeCycle>
-    <div>item</div>
-  </LifeCycle>,
+  <Provider store={store}>
+    <Redux></Redux>
+  </Provider>,
   document.querySelector('#root')
 )
